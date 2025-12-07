@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<entities>
+    <entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="patient">
+        <id>P0001</id>
+        <name>Alpha</name>
+        <email>sigma@gmail.com</email>
+        <phone>079080200</phone>
+    </entity>
+</entities>

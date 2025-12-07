@@ -10,13 +10,15 @@
     <packaging>jar</packaging>
 
     <name>Assignment4-5</name>
-    <description>Assignment 4-5: Database, Reports, XML/JSON bonus with Maven</description>
+    <description>Assignment 4-5: Database, Reports, XML/JSON bonus with Maven and JavaFX</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
-        <!-- Adjust Java version if your project uses another version -->
+        <javafx.version>25</javafx.version>
+        <javafx.platform>win</javafx.platform>
+        <!-- Change to 'linux', 'mac' for other platforms -->
     </properties>
 
     <dependencies>
@@ -57,6 +59,18 @@
             <version>2.15.0</version>
         </dependency>
 
+        <!-- JavaFX 25 dependencies -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+
         <!-- Optional: Logging to help debug (slf4j + simple logger) -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -67,14 +81,24 @@
 
     <build>
         <plugins>
-            <!-- Compiler plugin to ensure Java 11 compatibility (adjust as needed) -->
+            <!-- Compiler plugin to ensure Java 25 compatibility -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>3.13.0</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+
+            <!-- JavaFX Maven Plugin to run the application -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>Main</mainClass>
                 </configuration>
             </plugin>
 
@@ -84,10 +108,29 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
             </plugin>
+
+            <!-- Shade plugin for creating fat JAR -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>Main</mainClass>
+                                </transformer>
+                            </transformers>
+                            <finalName>appointment-system</finalName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <!-- Default Maven Central; explicit listing not required unless you override -->
-    </repositories>
 </project>

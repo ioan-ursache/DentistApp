@@ -74,7 +74,7 @@ public class ConsoleUI {
 
             default -> {
                 pRepo = new PatientRepository();
-                aRepo = new Repository.AppointmentRepositories.AppointmentRepository();
+                aRepo = new AppointmentRepository();
                 System.out.println("Using Memory Repositories (Default).");
             }
 
