@@ -3,6 +3,7 @@
 *The purpose of this app is to illustrate the use of Java and JavaFX for creating a GUI application.*
 
 The use case is as follows: a dentist has to manage the appointments of patients.
+
 Notes about the app:
 - The app may work in both console mode or a GUI mode.
 - Data is stored in multiple formats: text, binary, JSON, XML and relational database (MySQL).
