@@ -2,38 +2,24 @@
 
 *The purpose of this app is to illustrate the use of Java and JavaFX for creating a GUI application.*
 
-The use case is as follows: a dentist has to manage the appointments of patients.
+In the following, the nominator "DentistApp" will refer to the present application.
+The use case is as follows: a dentist has to manage both patient data and appointment data. 
 
 Notes about the app:
 - The app may work in both console mode or a GUI mode.
 - Data is stored in multiple formats: text, binary, JSON, XML and relational database (MySQL).
 - The app is solely designed for educational purposes. For that reason, certain shortcomings are noticeable (such as the design used in the Repository classes)
 
+Below is a compilation of all labs.
 
-# Laboratory 1
+## Laboratory 1
 
 <!--
 **Lab assignment**
-
-Write a Java program that computes the sum of all the integer numbers given as command-line
-parameters.
-
 ---
-
 **Home assignment**
 -->
-
-1. Provide solutions for the following problems:
-- Write a Java program that prints the prime numbers among the integers numbers given
-  as command-line parameters.
-- Write a Java program that prints the maximum value from all the double numbers given
-  as command-line parameters.
-- Write a Java program that prints the greatest common divisor of all integer numbers
-  given as command-line parameters.
-
----
-
-2. Choose one of the problems below and provide a layered architecture solution (in Java). Requirements necessary for the next lab:
+Choose one of the problems below and provide a layered architecture solution (in Java). Requirements necessary for the next lab:
 - Create the classes necessary for just one entity in the problem requirement (the first mentioned entity).
 -	The layers should be: Domain, Repository, service, UI. Use Java packages.
 -	Add at least 5 entities in your memory Repository (from source code).
@@ -42,11 +28,7 @@ parameters.
 
 1. Design and implement a Java solution for managing the appointments to a dentist. The program should allow CRUD operations for Patients and Appointments. Each Appointment is linked to a Patient using the unique patient identifier. Each Patient should thus be characterised (at least) by an ID, name, email and telephone number. Each Appointment should be characterised (at least) by an ID, the patient ID, the date and time.
 
-2. Design and implement a Java solution for managing the training sessions of multiple clients of a personal trainer, in a gym. The program should allow CRUD operations for Clients and Sessions. Each Client should thus be characterised (at least) by an ID, name, email and telephone number. Each Session should be characterised (at least) by an ID, the client ID, the date and time and workout description.
-
-3. Design and implement a Java solution for managing the reservations for car rentals. The program should allow CRUD operations for Cars and Reservations. Reservations are linked to cars using the unique car identifier.  Each cake should thus be characterised (at least) by an ID, make, model, rental price. Each Reservation should be characterised (at least) by an ID, the car ID, the customer name, and reservation start and end dates.
-
-# Laboratory 2
+## Laboratory 2
 
 <!--
 **Lab assignment**
@@ -74,7 +56,7 @@ For your chosen problem implement the requirements below:
 -	Add basic data validation and use the exception mechanism in Java for exceptional situations. Show messages in case of such situations.
 -	The UI must allow CRUD operations for both entities.
 
-# Laboratory 3
+## Laboratory 3
 
 <!--
 **Lab assignment**
@@ -103,7 +85,7 @@ Continue designing and implementing the problem you have chosen. For the next la
 **Bonus (0.2p)** \
 Create and use custom Validator classes to validate your inputs. Provide validator objects to your service(s) and make sure validation is performed. For the bonus points create at least one Validator class for each entity.
 
-# Laboratory 4
+## Laboratory 4
 
 Continue the implementation of the problem you have chosen for home assignment 2. For the next lab you must:
 -	Implement classes in the repository that allow storing and retrieving data to/from a relational database. The decision of which repositories are employed, as well as the location of the repository input files / database will be made available via the program’s **settings.properties** file and the Java *Properties* class. See an example is below:
@@ -128,7 +110,7 @@ Continue the implementation of the problem you have chosen for home assignment 2
 Allow storing/retrieving your data to/from JSON (**0.2p**) and XML (**0.2p**) files. The decision of which type of file to use and the necessary paths are given in the same configuration file (the program’s **settings.properties** file).
 
 
-# Laboratory 5
+## Laboratory 5
 
 Design and implement a JavaFX UI for the application you have been working on for your home assignment. The classes in layers except the UI should not be modified. The GUI should allow all operations that your console UI provided (basically, your application should offer functionalities for all requirements in your previous assignments). 
 
